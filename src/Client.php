@@ -6,6 +6,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Lussi\Authentication\TokenAuthentication;
+use Lussi\Service\Verify\Verify;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
@@ -40,6 +41,11 @@ class Client
     protected $clientSecret;
 
     /**
+     * @var Verify $verify The Verify Service
+     */
+    public $verify;
+
+    /**
      * Construct the Lussi Cient
      * 
      * @param CaccheInerface $cache
@@ -54,6 +60,8 @@ class Client
         $this->clientSecret = $clientSecret;
         $this->host = $host;
         $this->httpClient = HttpClient::create();
+
+        $this->verify = new Verify($this);
     }
 
     /**
