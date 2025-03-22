@@ -1,0 +1,26 @@
+{
+    "name": "lussi-hq/api-php-client",
+    "description": "PHP SDK for Lussi APIs Client",
+    "type": "library",
+    "keywords": [
+        "php", "api", "sms", "client", "http client", "json", "requests", "rest", 
+        "restful", "web service", "lussi", "cache"
+    ],
+	"homepage": "https://github.com/lussi-hq/api-php-client",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/http-client": "^6.4",
+        "symfony/cache": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lussi\\": "src/",
+            "Lussi\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.4",
+        "phpunit/phpunit": "^10.0"
+    }
+}
