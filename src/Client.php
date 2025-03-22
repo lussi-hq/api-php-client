@@ -43,7 +43,7 @@ class Client
     /**
      * @var Verify $verify The Verify Service
      */
-    public $verify;
+    public Verify $verify;
 
     /**
      * Construct the Lussi Cient
