@@ -11,8 +11,8 @@ $response = $client->verify
     ->services('0195bebd-57f8-754b-afe1-3ccb0a06686c')
     ->createVerification(
         '+243899999999',
-        'CD',
-        'sms'
+        'sms',
+        'CD'
     );
 
 dd($response->toArray());
