@@ -33,7 +33,7 @@ class Verify extends AbstractAuthenticatedService
     /**
      * Request a verification code
      */
-    public function createVerification(string $to, string $channel, string $region): ResponseInterface
+    public function createVerification(string $to, string $channel, ?string $region = null): ResponseInterface
     {
         $url = $this->client->getHost() . '/verify/v1/services/' . $this->serviceId;
         $headers = [
@@ -61,7 +61,7 @@ class Verify extends AbstractAuthenticatedService
     /**
      * Verify a verification code
      */
-    public function checkVerification(string $to, string $code, string $channel, string $region): ResponseInterface
+    public function checkVerification(string $to, string $code, string $channel, ?string $region = null): ResponseInterface
     {
         $url = $this->client->getHost() . '/verify/v1/services/' . $this->serviceId . '/check';
         $headers = [
